@@ -1,0 +1,657 @@
+//FF: font-family;
+//FS: font-size;
+//BG: background;
+
+ 
+//FONTS
+//serif
+$FF1: Times New Roman, seri;
+$FF2: Big Caslon, serif;
+$FF3: Bodoni MT, serif;
+$FF4: Book Antiqua, serif;
+$FF5: Bookman, serif;
+$FF6: New Century Schoolbook, serif;
+$FF7: Calisto MT, serif;
+$FF8: Cambria, serif;
+$FF9: Didot, serif;
+$FF10: Garamond, serif;
+$FF11: Georgia, serif;
+$FF12: Goudy Old Style, serif;
+$FF13: Hoefler Text, serif;
+$FF14: Lucida Bright, serif;
+$FF15: Palatino, serif;
+$FF16: Perpetua, serif;
+$FF17: Rockwell, serif;
+$FF18: Rockwell Extra Bold, serif;
+$FF19: Baskerville, serif;
+//sans-serif
+$FF20: Arial, sans-serif;
+$FF21: Helvetica, sans-serif;
+$FF22: Verdana, sans-serif;
+$FF23: Calibri, sans-serif;
+$FF24: Noto, sans-serif;
+$FF25: Lucida Sans, sans-serif;
+$FF26: Gill Sans, sans-serif;
+$FF27: Century Gothic, sans-serif;
+$FF28: Candara, sans-serif;
+$FF29: Futara, sans-serif;
+$FF30: Franklin Gothic Medium, sans-serif;
+$FF31: Trebuchet MS, sans-serif;
+$FF32: Geneva, sans-serif;
+$FF33: Segoe UI, sans-serif;
+$FF34: Optima, sans-serif;
+$FF35: Avanta Garde, sans-serif;
+//monospace
+$FF36: Consolas, monospace;
+$FF37: Courier, monospace;
+$FF38: Courier New, monospace;
+$FF39: Lucida Console, monospace;
+$FF40: Lucidatypewriter, monospace;
+$FF41: Lucida Sans Typewriter, monospace;
+$FF42: Monaco, monospace;
+$FF43: Andale Mono, monospace;
+//cursive
+$FF44: Comic Sans, cursive;
+$FF45: Comic Sans MS, cursive;
+$FF46: Apple Chancery, cursive;
+$FF47: Zapf Chancery, cursive;
+$FF48: Bradley Hand, cursive;
+$FF49: Brush Script MT, cursive;
+$FF50: Brush Script Std, cursive;
+$FF51: Snell Roundhan, cursive;
+$FF52: URW Chancery, cursive;
+$FF53: Coronet script, cursive;
+$FF54: Florence, cursive;
+$FF55: Parkavenue, cursive;
+//fantasy
+$FF56: "Impact", fantasy;
+$FF57: "Brushstroke", fantasy;
+$FF58: "Luminari", fantasy;
+$FF59: "Chalkduster", fantasy;
+$FF60: "Jazz LET", fantasy;
+$FF61: "Blippo", fantasy;
+$FF62: "Stencil Std", fantasy;
+$FF63: "Marker Felt", fantasy;
+$FF64: "Trattatello", fantasy;
+$FF65: "Arnoldboecklin", fantasy;
+$FF66: "Oldtown", fantasy;
+$FF67: "Copperplate", fantasy;
+$FF68: "papyrus", fantasy;
+
+//OUR CHOISES************************
+$warning: #dc5f00;
+$success: #218348;
+$error: #990000;
+$error_light: #f68989;
+$warning_light: #ffab4c;
+$success_light: #59ce8f;
+
+$FS_h1: 24px;
+$FS_h2: 22px;
+$FS_h3: 20px;
+$FS_h4: 18px;
+$FS_h5: 16px;
+$FS_h6: 14px;
+$FS_p: 13px;
+$FS_message: 13px;
+$FS_a: 13px;
+
+$black: #000;
+$white: #fff;
+
+$color1: #FAFAFA;
+$color2: #FF7E67;
+$color3: #07689F;
+$color4: #A2D5F2;
+
+$FF: $FF20;
+$FF_h: $FF; // h1,h2,h3,h4,h5,h6
+$FF_message: $FF; // message box
+$FF_p: $FF; // paragraph,
+$FF_a: $FF; // links,buttons
+$FF_li: $FF; //list
+$FF_t: $FF; //tables
+
+$px1: 2px;
+$px2: 4px;
+$px3: 6px;
+$px4: 8px;
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+//FLEX
+.container {
+  display: flex;
+}
+
+.dir-row {
+  flex-direction: row;
+}
+.dir-col {
+  flex-direction: column;
+}
+.dir-row-rev {
+  flex-direction: row-reverse;
+}
+.dir-col-rev {
+  flex-direction: column-reverse;
+}
+.jc-start {
+  justify-content: flex-start;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-between {
+  justify-content: space-between;
+}
+.jc-evenly {
+  justify-content: space-evenly;
+}
+.w-wrap {
+  flex-wrap: wrap;
+}
+.w-nowrap {
+  flex-wrap: nowrap;
+}
+.ai-start {
+  align-items: flex-start;
+}
+.ai-end {
+  align-items: flex-end;
+}
+.ai-center {
+  align-items: center;
+}
+//MARGIN
+
+.ma1 {
+  margin: $px1;
+}
+.ma2 {
+  margin: $px2;
+}
+.ma3 {
+  margin: $px3;
+}
+.ma4 {
+  margin: $px4;
+}
+
+//PADDING
+.pa1 {
+  padding: $px1;
+}
+.pa2 {
+  padding: $px2;
+}
+.pa3 {
+  padding: $px3;
+}
+.pa4 {
+  padding: $px4;
+}
+//WIDTH, HEIGHT
+.max {
+  height: 100%;
+  width: 100%;
+}
+.div-gap {
+  width: 1000px;
+}
+.auto {
+  height: auto;
+  width: auto;
+}
+$contentHigh: 500px;
+//MESSAGES (there are three different msg box)
+
+.error1 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $white;
+  color: $error;
+  border-bottom: solid 2px $error;
+  width: auto;
+  height: auto;
+}
+.error2 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $error_light;
+  color: $error;
+  border: solid 2px $error;
+  border-radius: 4px;
+  width: auto;
+  height: auto;
+}
+.success1 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $white;
+  color: $success;
+  border-bottom: solid 2px $success;
+  width: auto;
+  height: auto;
+}
+.success2 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $success_light;
+  color: $success;
+  border: solid 2px $success;
+  border-radius: 4px;
+  width: auto;
+  height: auto;
+}
+.warning1 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $white;
+  color: $warning;
+  border-bottom: solid 2px $warning;
+  width: auto;
+  height: auto;
+}
+.warning2 {
+  font-size: $FS_message;
+  font-family: $FF_message;
+  background-color: $warning_light;
+  color: $warning;
+  border: solid 2px $warning;
+  border-radius: 4px;
+  width: auto;
+  height: auto;
+}
+//TOPBAR
+.topbar1 {
+  background-color: $color2;
+}
+//NAVBAR
+.navbar1 {
+  height: 100px;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 25px;
+}
+.list-div {
+}
+.list-nav {
+}
+.list-ul {
+}
+.list-li {
+  list-style: none;
+  color: $color1;
+  font-family: $FF_li;
+  font-size: $FS_a;
+}
+//SCROLLBAR
+
+.scroller {
+  width: 400px;
+  height: $contentHigh;
+  overflow-y: scroll;
+  background-color: $color1;
+}
+.scroller::-webkit-scrollbar-track {
+  //-webkit-box-shadow: inset 0 0 6px rgb(170, 8, 8);
+  border-radius: 10px;
+  background-color: $color2;
+}
+.scroller::-webkit-scrollbar {
+  width: 12px;
+  //background-color: $color4;
+}
+.scroller::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: $color4;
+}
+//PARAGRAPH
+.p1 {
+  list-style: none;
+  color: $black;
+  font-family: $FF_p;
+  font-size: $FS_p;
+}
+
+//HEADERS
+.hdr1 {
+  color: $color2;
+  font-size: $FS_h1;
+  font-family: $FF_h;
+}
+.hdr2 {
+}
+.hdr3 {
+}
+//BUTTONS, LINKS
+.btn1 {
+  background-color: $color1;
+  color: $color2;
+  border: solid 2px $color2;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+.btn1:hover {
+  background-color: $color2;
+  color: $color1;
+  border: solid 2px $color1;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+.btn2 {
+  background-color: $color2;
+  color: $color1;
+  border: solid 2px $color1;
+  border-radius: 6px;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+.btn2:hover {
+  background-color: $color1;
+  color: $color2;
+  border: solid 2px $color2;
+  border-radius: 6px;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+
+.link1 {
+  list-style: none;
+  color: $color2;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  margin-bottom: 1px;
+  height: auto;
+  width: auto;
+}
+.link1:hover {
+  border-bottom: solid 1px $color2;
+  color: $color2;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+
+.link2 {
+  list-style: none;
+  color: $color4;
+  font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  margin-bottom: 1px;
+  height: auto;
+  width: auto;
+}
+.link2:hover {
+  color: $color1;
+   font-family: $FF_a;
+  font-size: $FS_a;
+  padding: 2px;
+  height: auto;
+  width: auto;
+}
+//CONTENT
+.div-content {
+  background-color: $color1;
+  height: $contentHigh;
+}
+//CARDS
+.card1 {
+  height: auto;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.144) 0px 5px 15px;
+  border-bottom: 4px solid $color2;
+  border-radius: 4px;
+}
+.card1:hover {
+  height: auto;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-bottom: 4px solid $color2;
+  border-radius: 4px;
+}
+.card2 {
+  height: auto;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.144) 0px 5px 15px;
+}
+//ICONS
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 100, "GRAD" 0, "opsz" 48;
+}
+.thumb_up {
+  color: $success_light;
+
+  background-color: #00000000;
+  border: none;
+}
+.thumb_up:hover {
+  color: $success;
+}
+.thumb_down {
+  color: $error_light;
+  background-color: #00000000;
+  border: none;
+}
+.thumb_down:hover {
+  color: $error;
+}
+//TABLES
+.table1 {
+  font-family: $FF_t;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table1 td,
+.table1 th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table1 tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table1 tr:hover {
+  background-color: #ddd;
+}
+
+.table1 th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+//FORMS
+input[type="text"],
+input[type="password"] {
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: $color1;
+   
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: $color4;
+  outline: none;
+  color:$color3;
+}
+input[type="search"] {
+  display: inline-block;
+  border: none;
+  background: $color1;
+}
+.label1 {
+  color: $color2;
+  font-size: $FS_p;
+  font-family: $FF_p;
+}
+//SEARCH-FORM
+input[type="search"]:focus {
+  display: inline-block;
+  border: none;
+  background: $color1;
+  outline: none;
+}
+.search-div {
+  border: 2px solid $color4;
+  width: 50%;
+  height: auto;
+}
+.search-btn {
+  height: 100%;
+  width: auto;
+  background-color: $color2;
+  color: $color4;
+  border: none;
+}
+.search-btn:hover {
+  height: 100%;
+  width: auto;
+  background-color: $color4;
+  color: $color2;
+  border: none;
+}
+//SLIDERS
+.mySlides {
+  display: none;
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1024px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: $color1;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: $color2;
+}
+
+/* Caption text */
+.text {
+  color: $color3;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: $color1;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: $color2;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: $color4;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+//resimler arasi geciste efektif olmasini saglar.
+@keyframes fade {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
+//FOOTER
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid $color2;
+}
+//Nostle
+.nostyle {
+  list-style: none;
+  text-decoration: none;
+}
