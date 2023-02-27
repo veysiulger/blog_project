@@ -18,3 +18,6 @@
 </div>
 <!--  FOOTER  -->
 <?php require "views/_footer.php"; ?>
+<?php 
+
+?>
