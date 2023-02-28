@@ -32,12 +32,12 @@
         <nav class=" ">
             <ul class="container dir-row">
                 <li class="container jc-center list-li pa1 ma1">
-                    <a href="login.php" class="link1 nostyle">Sign In!</a>
+                    <a href="login.php" class="link1 nostyle">Login!</a>
                 </li>
                 <li class="container jc-center list-li pa1 ma1">
-                    <a href="login.php" class="btn1 nostyle">Register!</a>
+                    <a href="register.php" class="btn1 nostyle">Register!</a>
                 </li>
             </ul>
         </nav>
     </div>
-</div>
+</div> 

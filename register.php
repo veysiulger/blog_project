@@ -9,22 +9,36 @@
 <div class="container jc-center">
   <div class="container dir-col ai-center">
     <div class="container jc-center dir-col">
-      <form action="login.php" method="POST">
+      <form action="register.php" method="POST">
         <div class="container dir-col pa1">
           <h1 class="hdr1">Register</h1>
           <p class="p1">Please fill in this form to create an account.</p>
           <hr />
           <label for="username" class="label1"><b>Username</b></label>
           <input type="text" placeholder="Enter username" name="username" id="email" />
+
+          <label for="email" class="label1"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email" required />
+
           <label for="psw" class="label1"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" id="psw" />
+
+          <label for="psw-repeat" class="label1"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="password_repeat" id="psw-repeat" />
           <hr />
 
           <p class="p1 pa2">
             By creating an account you agree to our
             <a href="#" class="link1 nostyle">Terms & Privacy</a>.
           </p>
-          <button type="submit" class="btn1" name="submit">Login</button>
+          <button type="submit" class="btn1" name="submit">Register</button>
+        </div>
+
+        <div class="container jc-center pa2">
+          <p class="p1">
+            Already have an account?
+            <a href="#" class="link1 nostyle">Sign in</a>.
+          </p>
         </div>
       </form>
 
@@ -33,22 +47,25 @@
       <?php require_once('classes/class.validation.php'); ?>
       <?php if (isset($_POST["submit"])) : ?>
         <?php
-        $userName = $_POST["username"];
-        $userPassword = $_POST["password"];
-
-        $control = new Validation($userName," ", $userPassword,  " ");
-        $controlResult = $control->loginControl();
+        $username = $_POST["username"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $passwordRepeat = $_POST["password_repeat"];
+        $control = new Validation($username, $email, $password, $passwordRepeat);
+        $controlResult = $control->registerControl();
         ?>
-        <?php if ($controlResult["username"] == 1 && $controlResult["password"] == 1) : ?>
+        <?php if ($controlResult["username"] == 1 && $controlResult["email"] == 1 && $controlResult["password"] == 1) : ?>
           <?php
-          require_once('classes/class.users.php');
+          require_once("classes/class.users.php");
           $user = new Users();
-          $user = $user->getUserByUserName($userName)
+          $result=$user->addUser($username, $email, $password);
+  
 
           ?>
+
           <div class="jc-center ma1">
             <p class="dir-row success2 pa1">
-              Giris basarili!
+              Kayit basarili!
             </p>
           </div>
 

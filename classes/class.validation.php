@@ -15,8 +15,12 @@ class Validation
         $this->passwordRepeat = $passwordRepeat;
     }
 
-    function control()
+    function registerControl()
     {
+        require_once("class.users.php");
+        $user = new Users();
+
+
         $message = array(
             "username" => array(),
             "email" => array(),
@@ -26,8 +30,7 @@ class Validation
         if (trim($this->userName) == " " || $this->userName == "") {
 
             $message["username"] = "isim alani bos birakilamaz!";
-        } elseif ("") {
-
+        } elseif ($user->getUserByUserName($this->userName) != "") {
             $message["username"] = "Bu kullanici adi alinmis!";
         } elseif (strlen(trim($this->userName)) < 5 or strlen(trim($this->userName)) > 20) {
             $message["username"] = "Kullanici adi en fazla 20, en az 5 karakter olabilir!";
@@ -40,7 +43,7 @@ class Validation
         if (trim($this->userEmail) == " " || $this->userEmail == "") {
 
             $message["email"] = "mail bos birakilamaz!";
-        } elseif ("") {
+        } elseif ($user->getUserByEmail($this->userEmail) != "") {
             $message["email"] = "Bu mail zaten alinmis!";
         } elseif (!filter_var($this->userEmail, FILTER_VALIDATE_EMAIL)) {
 
@@ -57,6 +60,45 @@ class Validation
         } else {
             $message["password"] = 1;
         }
+        return $message;
+    }
+    function loginControl()
+    {
+
+        require_once("class.users.php");
+        $user = new Users();
+        $userName = $user->getUserByUserName($this->userName);
+        $password = $user->getPasswordByUserName($this->userName);
+        $password["user_password"] = empty($password) ? " ":$password["user_password"] ;
+
+
+
+
+        $message = array(
+            "username" => array(),
+            "password" => array()
+        );
+
+        if (trim($this->userName) == " " || $this->userName == "") {
+
+            $message["username"] = "isim alani bos birakilamaz!";
+        } elseif ($userName == "" || $userName == " ") {
+            $message["username"] = "Boyle bir kullanici yoktur!";
+        } else {
+            $message["username"] = 1;
+        }
+        if (trim($this->userPassword) == " " || $this->userPassword == "") {
+
+            $message["password"] = "password alani bos birakilamaz!";
+        } elseif ($this->userPassword != $password["user_password"]) {
+            $message["password"] = "Hatalı parola!";
+        } else {
+            $message["password"] = 1;
+        }
+
+
+
+
         return $message;
     }
 }
