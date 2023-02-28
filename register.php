@@ -4,7 +4,31 @@
 <!--NAVBAR-->
 <? require "views/_navbar.php" ?>
 
+<?php
 
+require_once('classes/class.validation.php');
+require_once('classes/class.users.php');
+$message = array();
+if (isset($_POST["submit"])) {
+
+  $username = $_POST["username"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $passwordRepeat = $_POST["password_repeat"];
+  $control = new Validation($username, $email, $password, $passwordRepeat);
+  $controlResult = $control->registerControl();
+
+  if ($controlResult["username"] == 1 && $controlResult["email"] == 1 && $controlResult["password"] == 1) {
+    $style = "success2";
+    $message = array("message" => "Kayit basarili!");
+    $user = new Users();
+    $result = $user->addUser($username, $email, $password);
+  } else {
+    $style = "error2";
+    $message = $controlResult;
+  }
+}
+?>
 
 <div class="container jc-center">
   <div class="container dir-col ai-center">
@@ -42,53 +66,21 @@
         </div>
       </form>
 
-
-
-      <?php require_once('classes/class.validation.php'); ?>
-      <?php if (isset($_POST["submit"])) : ?>
-        <?php
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $passwordRepeat = $_POST["password_repeat"];
-        $control = new Validation($username, $email, $password, $passwordRepeat);
-        $controlResult = $control->registerControl();
-        ?>
-        <?php if ($controlResult["username"] == 1 && $controlResult["email"] == 1 && $controlResult["password"] == 1) : ?>
+      <div class="jc-center ma1">
+        <p class="dir-row <?php echo $style; ?> pa1">
           <?php
-          require_once("classes/class.users.php");
-          $user = new Users();
-          $result=$user->addUser($username, $email, $password);
-  
+          foreach ($message as $item) {
 
+            if ($item != 1) {
+
+              echo "- " . $item;
+              echo "<br>";
+            }
+          }
           ?>
-
-          <div class="jc-center ma1">
-            <p class="dir-row success2 pa1">
-              Kayit basarili!
-            </p>
-          </div>
-
-        <?php else : ?>
-          <div class="jc-center ma1">
-            <p class="dir-row error2 pa1">
-              <?php foreach ($controlResult as $item) : ?>
-                <?php if ($item != 1) : ?>
-                  <?php
-                  echo "- " . $item;
-                  echo "<br>";
-                  ?>
-                <?php endif; ?>
-              <?php endforeach; ?> </p>
-          </div>
-        <?php endif; ?>
-      <?php endif; ?>
-
-
-
-
+        </p>
+      </div>
     </div>
-
   </div>
 </div>
 <!--  FOOTER  -->

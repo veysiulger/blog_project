@@ -1,10 +1,25 @@
+<?php
+require_once('./classes/class.categories.php');
+require_once('./classes/class.sessions.php');
+
+$categories = new Categories();
+
+$userName = " ";
+$userID = " ";
+
+if (isset($_SESSION)) {
+
+    $userName = $_SESSION["username"];
+    $userID = $_SESSION["id"];
+}
+
+?>
 <div class="container jc-between ai-center max navbar1">
     <div class="container jc-center">
         <nav class=" ">
             <ul class="container dir-row">
                 <?php
-                require_once('./classes/class.categories.php');
-                $categories = new Categories();
+
                 foreach ($categories->categoryName as $item) :
                 ?>
                     <li class="container jc-center list-li pa1 ma1">
@@ -31,13 +46,27 @@
     <div class="container jc-center">
         <nav class=" ">
             <ul class="container dir-row">
-                <li class="container jc-center list-li pa1 ma1">
-                    <a href="login.php" class="link1 nostyle">Login!</a>
-                </li>
-                <li class="container jc-center list-li pa1 ma1">
-                    <a href="register.php" class="btn1 nostyle">Register!</a>
-                </li>
+
+
+                <?php if ($userName != " ") : ?>
+                    <li class="container jc-center list-li pa1 ma1">
+                        <a href="login.php" class="link1 nostyle">Merhaba <?php echo $userName; ?></a>
+                    </li>
+                    <li class="container jc-center list-li pa1 ma1">
+                        <a href="logout.php" class="btn1 nostyle">Log Out!</a>
+                    </li>
+
+                <?php else : ?>
+
+                    <li class="container jc-center list-li pa1 ma1">
+                        <a href="login.php" class="link1 nostyle">Login!</a>
+                    </li>
+                    <li class="container jc-center list-li pa1 ma1">
+                        <a href="register.php" class="btn1 nostyle">Register!</a>
+                    </li>
+
+                <?php endif; ?>
             </ul>
         </nav>
     </div>
-</div> 
+</div>

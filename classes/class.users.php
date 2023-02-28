@@ -77,4 +77,15 @@ class Users
         $userPassword = $query->fetch();
         return $userPassword;
     }
+
+    public function getIDbyUserName($userName){
+
+        $connection = $this->connection();
+        $query = $connection->query("SELECT user_id FROM users WHERE  user_name='$userName'");
+        $query->execute();
+        $userID = $query->fetch();
+        return $userID;
+
+
+    }
 }

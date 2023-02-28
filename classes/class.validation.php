@@ -71,9 +71,7 @@ class Validation
         $password = $user->getPasswordByUserName($this->userName);
         $password["user_password"] = empty($password) ? " ":$password["user_password"] ;
 
-
-
-
+        
         $message = array(
             "username" => array(),
             "password" => array()
@@ -95,9 +93,6 @@ class Validation
         } else {
             $message["password"] = 1;
         }
-
-
-
 
         return $message;
     }
