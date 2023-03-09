@@ -3,12 +3,14 @@ require_once('./classes/class.categories.php');
 require_once('./classes/class.sessions.php');
 
 $categories = new Categories();
+$session=new Sessions();
+$session->sessionOpen();
+
 
 $userName = " ";
 $userID = " ";
 
-if (isset($_SESSION)) {
-
+if (isset($_SESSION) and !empty($_SESSION["username"])) {
     $userName = $_SESSION["username"];
     $userID = $_SESSION["id"];
 }
@@ -50,7 +52,7 @@ if (isset($_SESSION)) {
 
                 <?php if ($userName != " ") : ?>
                     <li class="container jc-center list-li pa1 ma1">
-                        <a href="login.php" class="link1 nostyle">Merhaba <?php echo $userName; ?></a>
+                        <a href="profile.php" class="link1 nostyle">Merhaba <?php echo $userName; ?></a>
                     </li>
                     <li class="container jc-center list-li pa1 ma1">
                         <a href="logout.php" class="btn1 nostyle">Log Out!</a>

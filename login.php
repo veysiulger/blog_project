@@ -23,9 +23,13 @@ if (isset($_POST["submit"])) {
 
     $user = new Users();
     $userID = $user->getIDbyUserName($userName);
-    $session = new Sessions($userID, $userName, "user");
-    $session->sessionSet();
-    header("location:profile.php");
+
+    
+    $session = new Sessions();
+    $session->sessionOpen();
+    $session->sessionSet($userID, $userName, "user");
+    
+     header("location:profile.php");
 
     $style = "success2";
     $message = array("message" => "Kayit basarili!");

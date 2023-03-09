@@ -1,12 +1,8 @@
 <?php
 class DB
 {
-
-
-    
     function connection()
     {
-
         $serverName = "localhost";
         $userName = "root";
         $password = "";
