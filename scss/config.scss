@@ -206,7 +206,7 @@ $px4: 8px;
   height: auto;
   width: auto;
 }
-$contentHigh: 500px;
+$contentHigh: 100%;
 //MESSAGES (there are three different msg box)
 
 .error1 {
@@ -418,14 +418,14 @@ $contentHigh: 500px;
 //CARDS
 .card1 {
   height: auto;
-  width: 250px;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.144) 0px 5px 15px;
   border-bottom: 4px solid $color2;
   border-radius: 4px;
 }
 .card1:hover {
   height: auto;
-  width: 250px;
+  width: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-bottom: 4px solid $color2;
   border-radius: 4px;

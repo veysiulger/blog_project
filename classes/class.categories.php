@@ -24,6 +24,6 @@ class Categories
         require_once('class.DB.php');
         $newDB = new DB();
         $connection = $newDB->connection();
-        return $connection;
+        return $connection; 
     }
 }

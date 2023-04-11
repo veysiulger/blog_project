@@ -61,7 +61,7 @@ if (isset($_POST["submit"])) {
         <div class="container jc-center pa2">
           <p class="p1">
             Already have an account?
-            <a href="#" class="link1 nostyle">Sign in</a>.
+            <a href="login.php" class="link1 nostyle">Sign in</a>.
           </p>
         </div>
       </form>
