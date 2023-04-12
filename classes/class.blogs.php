@@ -24,8 +24,6 @@ class Blogs
         $this->blogUser = $queryUser->fetchAll(PDO::FETCH_ASSOC);
         $this->blogDate = $queryDate->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
     public function connection()
     {
 
@@ -42,7 +40,6 @@ class Blogs
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-
     public function getBlogByTitle($item)
     {
         $connection = $this->connection();
@@ -69,13 +66,12 @@ class Blogs
             $messsage = "İcerik en fazla 1000 karakter olabilir!";
             $state = 0;
         }
- 
+
         return array(
             "message" => $messsage,
             "state" => $state
         );
-    } 
-
+    }
     public function addBlog($title, $blog, $user)
     {
         $connection = $this->connection();
@@ -86,5 +82,11 @@ class Blogs
         } else {
             return false;
         }
+    }
+    function getBlogByUsername($item)
+    {
+        $connection = $this->connection();
+        $query = $connection->query("SELECT * FROM blogs WHERE blog_user='$item'");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 }

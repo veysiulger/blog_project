@@ -44,18 +44,15 @@ if (isset($_POST["submit"])) {
     <div class="container jc-center dir-col">
       <form action="login.php" method="POST">
         <div class="container dir-col pa1">
-          <h1 class="hdr1">Register</h1>
-          <p class="p1">Please fill in this form to create an account.</p>
+          <h1 class="hdr1">Giriş Yapın!</h1>
+          <p class="p1">Giriş yapmak için bilgileri doldurunuz:</p>
           <hr />
           <label for="username" class="label1"><b>Username</b></label>
           <input type="text" placeholder="Enter username" name="username" id="email" />
           <label for="psw" class="label1"><b>Password</b></label>
           <input type="password" placeholder="Enter Password" name="password" id="psw" />
           <hr />
-          <p class="p1 pa2">
-            By creating an account you agree to our
-            <a href="#" class="link1 nostyle">Terms & Privacy</a>.
-          </p>
+
           <button type="submit" class="btn1" name="submit">Login</button>
         </div>
       </form>

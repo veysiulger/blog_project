@@ -27,3 +27,4 @@ class Sessions
         session_destroy();
     }
 }
+ 

@@ -2,7 +2,6 @@
 //FS: font-size;
 //BG: background;
 
- 
 //FONTS
 //serif
 $FF1: Times New Roman, seri;
@@ -99,10 +98,10 @@ $FS_a: 13px;
 $black: #000;
 $white: #fff;
 
-$color1: #FAFAFA;
-$color2: #FF7E67;
-$color3: #07689F;
-$color4: #A2D5F2;
+$color1: #fafafa;
+$color2: #ff7e67;
+$color3: #07689f;
+$color4: #a2d5f2;
 
 $FF: $FF20;
 $FF_h: $FF; // h1,h2,h3,h4,h5,h6
@@ -404,7 +403,7 @@ $contentHigh: 100%;
 }
 .link2:hover {
   color: $color1;
-   font-family: $FF_a;
+  font-family: $FF_a;
   font-size: $FS_a;
   padding: 2px;
   height: auto;
@@ -416,16 +415,21 @@ $contentHigh: 100%;
   height: $contentHigh;
 }
 //CARDS
-.card1 {
+p{
+  width: 700px;
   height: auto;
-  width: 100%;
+}
+.card1 {
+  
+  height: auto;
+  width: 750px;
   box-shadow: rgba(0, 0, 0, 0.144) 0px 5px 15px;
   border-bottom: 4px solid $color2;
   border-radius: 4px;
 }
 .card1:hover {
   height: auto;
-  width: 100%;
+  width: 750px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-bottom: 4px solid $color2;
   border-radius: 4px;
@@ -494,14 +498,13 @@ input[type="password"] {
   display: inline-block;
   border: none;
   background: $color1;
-   
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
   background-color: $color4;
   outline: none;
-  color:$color3;
+  color: $color3;
 }
 input[type="search"] {
   display: inline-block;
@@ -654,4 +657,8 @@ footer {
 .nostyle {
   list-style: none;
   text-decoration: none;
+}
+
+.word_wrap{
+  word-wrap: break-word;
 }

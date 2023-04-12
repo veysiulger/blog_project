@@ -35,8 +35,8 @@ if (isset($_POST["submit"])) {
     <div class="container jc-center dir-col">
       <form action="register.php" method="POST">
         <div class="container dir-col pa1">
-          <h1 class="hdr1">Register</h1>
-          <p class="p1">Please fill in this form to create an account.</p>
+          <h1 class="hdr1">Kayıt Olun!</h1>
+          <p class="p1">Hesap oluşturmak için gerekli bilgileri girin!</p>
           <hr />
           <label for="username" class="label1"><b>Username</b></label>
           <input type="text" placeholder="Enter username" name="username" id="email" />
@@ -52,16 +52,14 @@ if (isset($_POST["submit"])) {
           <hr />
 
           <p class="p1 pa2">
-            By creating an account you agree to our
-            <a href="#" class="link1 nostyle">Terms & Privacy</a>.
-          </p>
-          <button type="submit" class="btn1" name="submit">Register</button>
+
+            <button type="submit" class="btn1" name="submit">Hesap Oluştur!</button>
         </div>
 
         <div class="container jc-center pa2">
           <p class="p1">
-            Already have an account?
-            <a href="login.php" class="link1 nostyle">Sign in</a>.
+            Zaten bir hesabınız var mı?
+            <a href="login.php" class="link1 nostyle">Giriş yapın</a>.
           </p>
         </div>
       </form>

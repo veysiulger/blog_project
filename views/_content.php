@@ -27,28 +27,26 @@ if (isset($_POST["submit"])) {
 <div class="div-content max container dir-col ma2 pa2">
   <?php foreach ($result as $item) : ?>
     <!--Cards-->
-    <div class="container max wrap">
+    <div class="container w-wrap"> 
       <div class="container dir-col card1 ma4">
-        <div class="ma2 pa2">
-          <div class="container max dir-col">
-            <h4><?php echo $item["blog_title"]; ?></h3>
-              <hr>
-              <p class="container jc-center pa1 p1">
-                <?php echo $item["blog_content"]; ?>
-              </p>
-              <br>
-              <hr>
-              <p><?php echo $item["blog_user"]; ?></p>
-              <div class="container jc-evenly ma1">
-                <button class="material-symbols-outlined thumb_up pa1">
-                  thumb_up
-                </button>
-                <button class="material-symbols-outlined thumb_down pa1">
-                  thumb_down
-                </button>
-              </div>
-          </div>
+
+        <div class="container  dir-col ">
+          <h4><?php echo $item["blog_title"]; ?></h4>
+            <hr>
+            <p class="container w-wrap pa1 p1 "><?php echo $item["blog_content"]; ?></p>
+            <br>
+            <hr>
+            <p><?php echo $item["blog_user"]; ?></p>
+            <div class="container jc-evenly ma1">
+              <button class="material-symbols-outlined thumb_up pa1">
+                thumb_up
+              </button>
+              <button class="material-symbols-outlined thumb_down pa1">
+                thumb_down
+              </button>
+            </div>
         </div>
+
       </div>
     </div>
   <?php endforeach; ?>

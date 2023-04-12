@@ -1,3 +1,10 @@
+<?php 
+require_once('./classes/class.variables.php');
+$title=new Vars();
+
+;?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +21,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <title>Document</title>
+    <title><?php echo $title->title?></title>
   </head>
   <body>

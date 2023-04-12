@@ -5,8 +5,6 @@
 <?php require "views/_navbar.php" ?>
 <div class="container jc-center">
   <div class="container dir-col ai-center">
-    <!--Slider-->
-    <?php require "views/_slider.php" ?>
     <!--  CONTENT -->
     <div class="container dir-row">
       <!--Scrollbar-->
